@@ -1,5 +1,34 @@
 @import "main.scss";
 
+@font-face {
+    font-family: 'IRANSansWeb';
+    src: url('../fonts/IRANSansWeb-Light.eot');
+    src: url('IRANSansWeb-Light.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/IRANSansWeb-Light.woff2') format('woff2'),
+        url('../fonts/IRANSansWeb-Light.woff') format('woff'),
+        url('../fonts/IRANSansWeb-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto-Regular.eot');
+    src: url('Roboto-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Roboto-Regular.woff2') format('woff2'),
+        url('../fonts/Roboto-Regular.woff') format('woff'),
+        url('../fonts/Roboto-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+* {
+    font-family: 'Roboto';
+}
+
+
 body {
     @include width(100%);
 }
@@ -8,7 +37,7 @@ body {
     @include width(100%);
     @include backgroundImg;
     padding: 0;
-    @include flex(center , none , none , none);
+    @include flex(center, none, none, none);
     position: fixed;
     z-index: 999;
 }
@@ -16,7 +45,7 @@ body {
 .golestan_logo {
     @include width(143px);
     height: 88px;
-    @include margin(6px , none , 6px , none);
+    @include margin(6px, none, 6px, none);
 }
 
 .nav_row1 {
@@ -27,30 +56,37 @@ body {
 .nav_col1 {
     padding: 0;
     @include width(100%);
-    @include flex(center , center , none , none);
+    @include flex(center, center, none, none);
 }
 
 .nav_col2 {
-    @include flex(none , center , none , none);
+    @include flex(none, center, none, none);
 }
 
 .nav_col3 {
-    @include flex(center , center , row , none);
+    @include flex(center, center, row, none);
 
     ul {
-        @include flex(center , center , none , none);
+        @include flex(center, center, none, none);
 
         li {
+            font-family: 'IRANSansWeb';
             list-style-type: none;
-            @include margin(noen , 20px , none , 20px);
+            @include margin(none, 20px, none, 20px);
             color: #AFB2B4;
-            @include font(16px , none);
+            @include font(16px, none);
+
+            &:hover {
+                cursor: pointer;
+                transition: all 300ms ease 0s;
+                color: #c1c4c7
+            }
         }
     }
 }
 
 .nav_dropdown_btn_icon {
-    @include font(30px , none);
+    @include font(30px, none);
     color: white;
 }
 
@@ -65,43 +101,43 @@ body {
 }
 
 .golestan_tea_container2_col1 {
-    @include flex(center , none , none , none);
+    @include flex(center, none, none, none);
 }
 
 .golestan_tea_container_col1 {
-    @include flex(center , none , none , none);
+    @include flex(center, none, none, none);
 }
 
 .golestan_tea_container2_col2 {
     h1 {
-        @include font(35px , 400);
+        @include font(35px, 400);
         color: red;
-        @include margin(none , none , none , 25px);
+        @include margin(none, none, none, 25px);
     }
 
     p {
-        @include font(25px , 400);
-        @include margin(none , none , 40px , 23px);
+        @include font(25px, 400);
+        @include margin(none, none, 40px, 23px);
         color: #7C7D7E;
     }
 }
 
 .golestan_tea_container_col2 {
     h1 {
-        @include font(35px , 400);
+        @include font(35px, 400);
         color: red;
-        @include margin(none , none , none , 25px);
+        @include margin(none, none, none, 25px);
     }
 
     p {
-        @include font(25px , 400);
-        @include margin(none , none , 40px , 23px);
+        @include font(25px, 400);
+        @include margin(none, none, 40px, 23px);
         color: #7C7D7E;
     }
 }
 
 .line_1 {
-    @include margin(195px , auto , 0px , auto);
+    @include margin(195px, auto, 0px, auto);
     @include width(95%);
     align-self: center;
     height: 1px;
@@ -110,14 +146,14 @@ body {
 
 .what_about_golestan_col1 {
     h1 {
-        @include margin(80px , none , none , 10px);
-        @include font(22px , 500);
+        @include margin(80px, none, none, 10px);
+        @include font(22px, 500);
         color: red;
     }
 
     p {
-        @include margin(10px , none , none , 10px);
-        @include font(18px , 400);
+        @include margin(10px, none, none, 10px);
+        @include font(18px, 400);
         color: #7C7D7E;
         text-align: justify;
         line-height: 32px;
@@ -126,14 +162,14 @@ body {
 
 .what_about_golestan2_col1 {
     h1 {
-        @include margin(80px , none , none , 10px);
-        @include font(22px , 500);
+        @include margin(80px, none, none, 10px);
+        @include font(22px, 500);
         color: red;
     }
 
     p {
-        @include margin(10px , none , none , 10px);
-        @include font(18px , 400);
+        @include margin(10px, none, none, 10px);
+        @include font(18px, 400);
         color: #7C7D7E;
         text-align: justify;
         line-height: 32px;
@@ -141,26 +177,26 @@ body {
 }
 
 .strange_list_container {
-    @include margin(100px , none , 130px , none);
-    @include flex(center , center , none , none);
+    @include margin(100px, none, 130px, none);
+    @include flex(center, center, none, none);
     padding: 0;
 
     .strange_list_container_row1 {
         @include width(100%);
         align-self: center;
-        @include flex(center , center , row , nowrap);
+        @include flex(center, center, row, nowrap);
 
         .strange_list_container_col1 {
             @include width(fit-content);
-            @include margin(0px , 10px , 0px , 10px);
-            @include flex(center , end , column , none);
+            @include margin(0px, 10px, 0px, 10px);
+            @include flex(center, end, column, none);
 
             img {
                 min-width: 168.7px;
             }
 
             p {
-                @include margin(5px , 0px , 15px , 0px);
+                @include margin(5px, 0px, 15px, 0px);
                 min-width: 168.7px;
                 text-align: center;
                 color: #7C7D7E;
@@ -177,15 +213,15 @@ body {
 
         .strange_list_container_col2 {
             @include width(fit-content);
-            @include margin(0px , 10px , 0px , 10px);
-            @include flex(center , end , column , none);
+            @include margin(0px, 10px, 0px, 10px);
+            @include flex(center, end, column, none);
 
             img {
                 min-width: 168.7px;
             }
 
             p {
-                @include margin(5px , 0px , 15px , 0px);
+                @include margin(5px, 0px, 15px, 0px);
                 min-width: 168.7px;
                 text-align: center;
                 color: #7C7D7E;
@@ -202,15 +238,15 @@ body {
 
         .strange_list_container_col3 {
             @include width(fit-content);
-            @include margin(0px , 10px , 0px , 10px);
-            @include flex(center , start , column , none);
+            @include margin(0px, 10px, 0px, 10px);
+            @include flex(center, start, column, none);
 
             img {
                 min-width: 168.7px;
             }
 
             p {
-                @include margin(5px , 0px , 15px , 0px);
+                @include margin(5px, 0px, 15px, 0px);
                 min-width: 168.7px;
                 text-align: center;
                 color: #7C7D7E;
@@ -227,15 +263,15 @@ body {
 
         .strange_list_container_col4 {
             @include width(fit-content);
-            @include margin(0px , 10px , 0px , 10px);
-            @include flex(center , start , column , none);
+            @include margin(0px, 10px, 0px, 10px);
+            @include flex(center, start, column, none);
 
             img {
                 min-width: 168.7px;
             }
 
             p {
-                @include margin(5px , 0px , 15px , 0px);
+                @include margin(5px, 0px, 15px, 0px);
                 min-width: 168.7px;
                 text-align: center;
                 color: #7C7D7E;
@@ -253,7 +289,7 @@ body {
 }
 
 .line_2 {
-    @include margin(40px , auto , 0px , auto);
+    @include margin(40px, auto, 0px, auto);
     @include width(95%);
     align-self: center;
     height: 1px;
@@ -261,7 +297,7 @@ body {
 }
 
 .line_22 {
-    @include margin(40px , auto , 0px , auto);
+    @include margin(40px, auto, 0px, auto);
     @include width(95%);
     align-self: center;
     height: 1px;
@@ -269,11 +305,12 @@ body {
 }
 
 .img-rice {
-    @include flex(center , none , none , none);
+    @include flex(center, none, none, none);
     overflow: hidden;
-    @include margin(25px , none , none , 1px);
+    @include margin(25px, none, none, 1px);
 
 }
+
 .image-rice {
     height: 241px;
 }
@@ -284,7 +321,7 @@ body {
     padding-bottom: 6px;
     color: rgb(255, 255, 255);
     background-color: red;
-    @include font(40px , none);
+    @include font(40px, none);
     direction: rtl;
     padding-right: 20px;
 }
@@ -292,22 +329,22 @@ body {
 
 .rice_col1 {
     h1 {
-        @include margin(50px , none , none , 10px);
-        @include font(22px , 500);
+        @include margin(50px, none, none, 10px);
+        @include font(22px, 500);
         color: red;
     }
 
     .rice_p1 {
-        @include margin(10px , none , none , 10px);
-        @include font(18px , 400);
+        @include margin(10px, none, none, 10px);
+        @include font(18px, 400);
         color: #7C7D7E;
         text-align: justify;
         line-height: 32px;
     }
 
     .rice_p2 {
-        @include margin(20px , none , none , 5px);
-        @include font(16px , none);
+        @include margin(20px, none, none, 5px);
+        @include font(16px, none);
         @include width(fit-content);
         padding-top: 8px;
         padding-bottom: 8px;
@@ -315,13 +352,19 @@ body {
         border: 1px solid #7C7D7E;
         border-radius: 10px;
         color: #7C7D7E;
+        &:hover{
+            transition: all 300ms ease 0s;
+            background-color: red;
+            color: white;
+            cursor: pointer;
+        }
     }
 }
 
 .img-tea {
-    @include flex(center , none , none , none);
+    @include flex(center, none, none, none);
     overflow: hidden;
-    @include margin(90px , none , none , 1px);
+    @include margin(90px, none, none, 1px);
 }
 
 .image-tea {
@@ -333,7 +376,7 @@ body {
     padding-bottom: 6px;
     color: rgb(255, 255, 255);
     background-color: red;
-    @include font(40px , none);
+    @include font(40px, none);
     direction: rtl;
     padding-right: 20px;
 }
@@ -341,38 +384,44 @@ body {
 
 .tea_col1 {
     h1 {
-        @include margin(50px , none , none , 10px);
-        @include font(22px , 500);
+        @include margin(50px, none, none, 10px);
+        @include font(22px, 500);
         color: red;
     }
 
     .tea_p1 {
-        @include margin(10px , none , none , 10px);
-        @include font(18px , 400);
+        @include margin(10px, none, none, 10px);
+        @include font(18px, 400);
         color: #7C7D7E;
         text-align: justify;
         line-height: 32px;
     }
 
     .tea_p2 {
-        @include margin(20px , none , none , 5px);
-        @include font(16px , none);
+        @include margin(20px, none, none, 5px);
+        @include font(16px, none);
         @include width(fit-content);
         padding-top: 8px;
         padding-bottom: 8px;
-        @include paddinglr(25px , 25px);
+        @include paddinglr(25px, 25px);
         border: 1px solid #7C7D7E;
         border-radius: 10px;
         color: #7C7D7E;
+        &:hover{
+            transition: all 300ms ease 0s;
+            background-color: red;
+            color: white;
+            cursor: pointer;
+        }
     }
 }
 
 
 
 .img-pistachios {
-    @include flex(center , none , none , none);
+    @include flex(center, none, none, none);
     overflow: hidden;
-    @include margin(10px , none , none , 1px);
+    @include margin(10px, none, none, 1px);
 }
 
 .image-pistachios {
@@ -384,7 +433,7 @@ body {
     padding-bottom: 6px;
     color: rgb(255, 255, 255);
     background-color: red;
-    @include font(40px , none);
+    @include font(40px, none);
     direction: rtl;
     padding-right: 20px;
 }
@@ -392,29 +441,35 @@ body {
 
 .pistachios_col1 {
     h1 {
-        @include margin(50px , none , none , 10px);
-        @include font(22px , 500);
+        @include margin(50px, none, none, 10px);
+        @include font(22px, 500);
         color: red;
     }
 
     .pistachios_p1 {
-        @include margin(10px , none , none , 10px);
-        @include font(18px , 400);
+        @include margin(10px, none, none, 10px);
+        @include font(18px, 400);
         color: #7C7D7E;
         text-align: justify;
         line-height: 32px;
     }
 
     .pistachios_p2 {
-        @include margin(20px , none , none , 5px);
-        @include font(16px , none);
+        @include margin(20px, none, none, 5px);
+        @include font(16px, none);
         @include width(fit-content);
         padding-top: 8px;
         padding-bottom: 8px;
-        @include paddinglr(25px , 25px);
+        @include paddinglr(25px, 25px);
         border: 1px solid #7C7D7E;
         border-radius: 10px;
         color: #7C7D7E;
+        &:hover{
+            transition: all 300ms ease 0s;
+            background-color: red;
+            color: white;
+            cursor: pointer;
+        }
     }
 }
 
@@ -424,25 +479,25 @@ body {
 
     .golestan_social_row1 {
         .golestan_social_col1 {
-            @include flex(center , baseline , row , none);
+            @include flex(center, baseline, row, none);
             padding-top: 250px;
 
             h6 {
                 color: #009DA2;
-                @include font(30px , 400);
+                @include font(30px, 400);
                 margin: 0;
             }
 
             p {
                 color: #00D8DF;
-                @include font(20px , 400);
+                @include font(20px, 400);
                 margin: 0;
-                @include margin(none , none , none , 5px);
+                @include margin(none, none, none, 5px);
             }
         }
 
         .golestan_social_col2 {
-            @include flex(center , center , column , none);
+            @include flex(center, center, column, none);
             padding: 0;
 
             .image-building {
@@ -457,7 +512,7 @@ body {
 
 
 .line_3 {
-    @include margin(30px , auto , 0px , auto);
+    @include margin(30px, auto, 0px, auto);
     @include width(100%);
     align-self: center;
     height: 1px;
@@ -475,35 +530,41 @@ body {
 
 .golestan_charitable_col1 {
     h1 {
-        @include margin(85px , none , none , 10px);
-        @include font(22px , 500);
+        @include margin(85px, none, none, 10px);
+        @include font(22px, 500);
         color: red;
     }
 
     .golestan_charitable_p1 {
-        @include margin(20px , none , none , 10px);
-        @include font(18px , 400);
+        @include margin(20px, none, none, 10px);
+        @include font(18px, 400);
         color: #7C7D7E;
         text-align: justify;
         line-height: 32px;
     }
 
     .golestan_charitable_p2 {
-        @include margin(20px , none , none , 10px);
-        @include font(16px , none);
+        @include margin(20px, none, none, 10px);
+        @include font(16px, none);
         @include width(fit-content);
         padding-top: 8px;
         padding-bottom: 8px;
-        @include paddinglr(25px , 25px);
+        @include paddinglr(25px, 25px);
         border: 1px solid #7C7D7E;
         border-radius: 10px;
         color: #7C7D7E;
+        &:hover{
+            transition: all 300ms ease 0s;
+            background-color: red;
+            color: white;
+            cursor: pointer;
+        }
     }
 }
 
 .golestan_footer_col1 {
     background-color: #EEEFEF;
-    @include flex(center , none , row , none);
+    @include flex(center, none, row, none);
     margin-top: 65px;
 
     img {
@@ -526,32 +587,38 @@ body {
 .golestan_footer_col3 {
     @include backgroundImg;
     padding-top: 10px;
-    @include flex(none , center , column , none);
+    @include flex(none, center, column, none);
 
     p {
         color: #828991;
-        @include margin(0px , auto , 0px , auto);
+        @include margin(0px, auto, 0px, auto);
+
+        &:hover {
+            cursor: pointer;
+            transition: all 300ms ease 0s;
+            color: #c1c4c7
+        }
     }
 
     .first_p1_p {
-        @include margin(30px , auto , 0px , auto);
+        @include margin(30px, auto, 0px, auto);
     }
 
     h6 {
-        @include margin(5px , none , 8px , none);
+        @include margin(5px, none, 8px, none);
         color: #ffffff;
     }
 }
 
 .line_6 {
-    @include margin(25px , auto , 0px , auto);
+    @include margin(25px, auto, 0px, auto);
     @include width(95%);
     height: 1px;
     background-color: #828991;
 }
 
 .line_7 {
-    @include margin(0px , auto , 0px , auto);
+    @include margin(0px, auto, 0px, auto);
     @include width(95%);
     height: 1px;
     background-color: #828991;
@@ -560,19 +627,24 @@ body {
 .golestan_footer_col4 {
     @include backgroundImg;
     padding-top: 10px;
-    @include flex(none , center , column , none);
+    @include flex(none, center, column, none);
 
     p {
-        color: #BCBEC0;
-        @include margin(0px , auto , 0px , auto);
+        color: #828991;
+        @include margin(0px, auto, 0px, auto);
+        &:hover {
+            cursor: pointer;
+            transition: all 300ms ease 0s;
+            color: #c1c4c7
+        }
     }
 
     .first_p1_p {
-        @include margin(30px , auto , 0px , auto);
+        @include margin(30px, auto, 0px, auto);
     }
 
     h6 {
-        @include margin(5px , none , 8px , none);
+        @include margin(5px, none, 8px, none);
         color: #ffffff;
     }
 }
@@ -580,19 +652,24 @@ body {
 .golestan_footer_col5 {
     @include backgroundImg;
     padding-top: 10px;
-    @include flex(none , center , column , none);
+    @include flex(none, center, column, none);
 
     p {
-        color: #BCBEC0;
-        @include margin(0px , auto , 0px , auto);
+        color: #828991;
+        @include margin(0px, auto, 0px, auto);
+        &:hover {
+            cursor: pointer;
+            transition: all 300ms ease 0s;
+            color: #c1c4c7
+        }
     }
 
     .first_p1_p {
-        @include margin(30px , auto , 0px , auto);
+        @include margin(30px, auto, 0px, auto);
     }
 
     h6 {
-        @include margin(5px , none , 8px , none);
+        @include margin(5px, none, 8px, none);
         color: #ffffff;
     }
 }
@@ -600,19 +677,24 @@ body {
 .golestan_footer_col6 {
     @include backgroundImg;
     padding-top: 10px;
-    @include flex(none , center , column , none);
+    @include flex(none, center, column, none);
 
     p {
-        color: #BCBEC0;
-        @include margin(0px , auto , 0px , auto);
+        color: #828991;
+        @include margin(0px, auto, 0px, auto);
+        &:hover {
+            cursor: pointer;
+            transition: all 300ms ease 0s;
+            color: #c1c4c7
+        }
     }
 
     .first_p1_p {
-        @include margin(30px , auto , 0px , auto);
+        @include margin(30px, auto, 0px, auto);
     }
 
     h6 {
-        @include margin(5px , none , 8px , none);
+        @include margin(5px, none, 8px, none);
         color: #ffffff;
     }
 }
@@ -621,75 +703,81 @@ body {
 .golestan_footer_col7 {
     @include backgroundImg;
     padding-top: 10px;
-    @include flex(none , center , column , none);
+    @include flex(none, center, column, none);
 
     .golestan_footer_col7_p1 {
         color: #9F9F9F;
-        @include margin(35px , auto , 0px , auto);
+        @include margin(35px, auto, 0px, auto);
     }
 
     .golestan_footer_col7_p2 {
         color: #7B7B7B;
-        @include margin(0px , auto , 0px , auto);
-        @include font(14px , none);
+        @include margin(0px, auto, 0px, auto);
+        @include font(14px, none);
         padding-bottom: 45px;
     }
 }
 
 @media all and (min-width:768px) {
     .golestan_tea_container2_row1 {
-        @include flex(none , none , row-reverse , none);
+        @include flex(none, none, row-reverse, none);
     }
 
     .golestan_tea_container_row1 {
-        @include flex(none , center , row-reverse , none);
+        @include flex(none, center, row-reverse, none);
     }
 
     .golestan_tea_container2_col2 {
-        @include flex(center , none , column , none);
+        @include flex(center, none, column, none);
 
         h1 {
-            @include font(55px , 400);
+            @include font(55px, 400);
             color: red;
-            @include margin(none , none , none , 65px);
+            @include margin(none, none, none, 65px);
         }
 
         p {
-            @include font(25px , 400);
-            @include margin(none , none , 40px , 63px);
+            @include font(25px, 400);
+            @include margin(none, none, 40px, 63px);
             color: #7C7D7E;
             text-align: start;
         }
     }
 
     .golestan_tea_container_col2 {
-        @include flex(center , end , column , none);
+        @include flex(center, end, column, none);
 
         h1 {
             align-self: flex-start;
-            @include paddinglr(8.125vw , 8.125vw)
+            @include paddinglr(8.125vw, 8.125vw)
         }
 
         .golestan_tea_container_col2_p2 {
             align-self: flex-start;
-            @include font(14px , none);
+            @include font(14px, none);
             padding: 12px 24px 12px 24px;
-            @include margin(none , none , none , 9.125vw);
+            @include margin(none, none, none, 9.125vw);
             background-color: #FFFFFF;
             border-radius: 8px;
+            &:hover {
+                cursor: pointer;
+                transition: all 300ms ease 0s;
+                background-color: red;
+                color: #ffffff
+            }
         }
 
         .golestan_tea_container_col2_p1 {
-            @include font(none , 400);
+            @include font(none, 400);
             font-size: 18px !important;
-            @include margin(none , none , none , 23px);
-            @include paddinglr(8.125vw , 8.125vw);
+            @include margin(none, none, none, 23px);
+            @include paddinglr(8.125vw, 8.125vw);
             color: #7C7D7E;
         }
     }
 
     .golestan_tea_container_col1 {
-        @include flex(center , start , column , none);
+        @include flex(center, start, column, none);
 
         h1 {
             align-self: flex-start;
@@ -697,16 +785,16 @@ body {
 
         .golestan_tea_container_col_p2 {
             align-self: flex-start;
-            @include font(14px , none);
+            @include font(14px, none);
             padding: 12px 24px 12px 24px;
             background-color: #FFFFFF;
             border-radius: 8px;
         }
 
         .golestan_tea_container_col_p1 {
-            @include font(none , 400);
+            @include font(none, 400);
             font-size: 18px !important;
-            @include margin(none , none , none , 23px);
+            @include margin(none, none, none, 23px);
             color: #7C7D7E;
         }
     }
@@ -734,15 +822,15 @@ body {
         padding: 50px 180px 30px 30px !important;
         color: rgb(255, 255, 255);
         background-color: red;
-        @include font(40px , none);
+        @include font(40px, none);
         direction: ltr;
         padding-right: 20px;
         transform: translateY(-120px);
-        @include margin(none , none , 30px , 29.125vw);
+        @include margin(none, none, 30px, 29.125vw);
     }
 
     .rice {
-        @include margin(-120px , none , none , none);
+        @include margin(-120px, none, none, none);
     }
 
     .line_22 {
@@ -750,7 +838,7 @@ body {
     }
 
     .rice_col1 {
-        @include paddinglr(29.125vw , 29.125vw);
+        @include paddinglr(29.125vw, 29.125vw);
     }
 
     .p-tea {
@@ -758,19 +846,19 @@ body {
         padding: 50px 180px 30px 30px !important;
         color: rgb(255, 255, 255);
         background-color: red;
-        @include font(40px , none);
+        @include font(40px, none);
         direction: ltr;
         padding-right: 20px;
         transform: translateY(-120px);
-        @include margin(none , none , 30px , 29.125vw);
+        @include margin(none, none, 30px, 29.125vw);
     }
 
     .tea {
-        @include margin(-120px , none , none , none);
+        @include margin(-120px, none, none, none);
     }
 
     .tea_col1 {
-        @include paddinglr(29.125vw , 29.125vw);
+        @include paddinglr(29.125vw, 29.125vw);
     }
 
     .p-pistachios {
@@ -778,35 +866,35 @@ body {
         padding: 50px 180px 30px 30px !important;
         color: rgb(255, 255, 255);
         background-color: red;
-        @include font(40px , none);
+        @include font(40px, none);
         direction: ltr;
         padding-right: 20px;
         transform: translateY(-120px);
-        @include margin(none , none , 30px , 29.215vw);
+        @include margin(none, none, 30px, 29.215vw);
     }
 
     .pistachios {
-        @include margin(-120px , none , none , none);
+        @include margin(-120px, none, none, none);
     }
 
     .pistachios_col1 {
-        @include paddinglr(29.125vw , 29.125vw);
+        @include paddinglr(29.125vw, 29.125vw);
     }
 
     .golestan_charitable_col1 {
-        @include paddinglr(29.125vw , 29.125vw);
+        @include paddinglr(29.125vw, 29.125vw);
     }
 
     .what_about_golestan_col1 {
-        @include paddinglr(29.125vw , 29.125vw);
+        @include paddinglr(29.125vw, 29.125vw);
     }
 
     .what_about_golestan2_col1 {
-        @include paddinglr(29.125vw , 29.125vw);
+        @include paddinglr(29.125vw, 29.125vw);
     }
 
     .what_about_golestan_col2 {
-        @include paddinglr(29.125vw , 29.125vw);
+        @include paddinglr(29.125vw, 29.125vw);
     }
 }
 
@@ -814,7 +902,7 @@ body {
 @media all and (min-width:992px) {
     .golestan_logo {
         transform: translateY(50px);
-        @include margin(none , none , none , 16.125vw);
+        @include margin(none, none, none, 16.125vw);
     }
 
     .seprator {
@@ -822,7 +910,7 @@ body {
     }
 
     .nav_row1 {
-        @include flex(space-between , end , row , none);
+        @include flex(space-between, end, row, none);
     }
 
     .nav_col1 {
@@ -837,43 +925,43 @@ body {
             @include width(fit-content);
             padding: 0;
             margin: 0;
-            @include margin(none , none , 20px , none);
+            @include margin(none, none, 20px, none);
         }
     }
 
     .golestan_tea_container2_col2 {
-        @include flex(center , end , column , none);
+        @include flex(center, end, column, none);
 
         h1 {
-            @include font(55px , none);
+            @include font(55px, none);
         }
     }
 
     .golestan_tea_container2_col1 {
-        @include flex(center , start , column , none);
+        @include flex(center, start, column, none);
     }
 
     .golestan_tea_container2_row1 {
-        @include flex(none , none , row-reverse , none);
+        @include flex(none, none, row-reverse, none);
     }
 }
 
 // ============================================ Page 2 ============================================
 
 .after_nav2 {
-    @include margin(170px , none , none , none);
+    @include margin(170px, none, none, none);
 }
 
 .what_about_golestan_col2 {
     h1 {
-        @include margin(20px , none , none , 10px);
-        @include font(22px , 500);
+        @include margin(20px, none, none, 10px);
+        @include font(22px, 500);
         color: red;
     }
 
     p {
-        @include margin(10px , none , none , 10px);
-        @include font(18px , 400);
+        @include margin(10px, none, none, 10px);
+        @include font(18px, 400);
         color: #7C7D7E;
         text-align: justify;
         line-height: 32px;
@@ -881,35 +969,35 @@ body {
 }
 
 .line_8 {
-    @include margin(5px , auto , 0px , auto);
+    @include margin(5px, auto, 0px, auto);
     @include width(100%);
     height: 1px;
     background-color: #828991;
 }
 
 .product1 {
-    @include margin(150px , none , none , none);
-    padding: 0px 22.125vw 0px 22.125vw;
+    @include margin(150px, none, none, none);
+    padding: 0px 16.125vw 0px 16.125vw;
 }
 
 .product1_col1 {
-    @include flex(center , none , none , none);
+    @include flex(center, none, none, none);
 }
 
 .product1_col2 {
-    @include flex(start , center , row , none);
+    @include flex(start, center, row, none);
 
     p {
         padding-top: 30px;
         margin: 0;
-        @include margin(none , none , none , -20px);
-        @include font(20px , 300);
+        @include margin(none, none, none, -20px);
+        @include font(20px, 300);
         color: red;
     }
 }
 
 .product1_col3 {
-    @include flex(space-between , none , column , none);
+    @include flex(space-between, none, column, none);
 
     img {
         @include width(50px);
@@ -917,52 +1005,52 @@ body {
     }
 
     p {
-        @include margin(5px , none , 5px , none);
-        @include font(18px , 900);
+        @include margin(5px, none, 5px, none);
+        @include font(18px, 900);
     }
 
     .grs1 {
-        @include flex(end , none , none , none);
+        @include flex(end, none, none, none);
 
         img {
-            @include margin(2px , 2px , 2px , 2px);
+            @include margin(2px, 2px, 2px, 2px);
         }
     }
 }
 
 .product1_col4 {
-    @include margin(19px , none , none , none);
+    @include margin(19px, none, none, none);
 
     p {
         color: #94979A;
-        @include font(19px , none);
+        @include font(19px, none);
     }
 }
 
 
 .product2 {
-    padding: 0px 22.125vw 0px 22.125vw;
-    @include margin(150px , none , none , none);
+    padding: 0px 16.125vw 0px 16.125vw;
+    @include margin(150px, none, none, none);
 }
 
 .product2_col1 {
-    @include flex(center , none , none , none);
+    @include flex(center, none, none, none);
 }
 
 .product2_col2 {
-    @include flex(start , center , row , none);
+    @include flex(start, center, row, none);
 
     p {
         padding-top: 30px;
         margin: 0;
-        @include margin(none , none , none , -20px);
-        @include font(20px , 300);
+        @include margin(none, none, none, -20px);
+        @include font(20px, 300);
         color: red;
     }
 }
 
 .product2_col3 {
-    @include flex(space-between , none , column , none);
+    @include flex(space-between, none, column, none);
 
     img {
         @include width(50px);
@@ -970,52 +1058,51 @@ body {
     }
 
     p {
-        @include margin(5px , none , 5px , none);
-        @include font(18px , 900);
+        @include margin(5px, none, 5px, none);
+        @include font(18px, 900);
     }
 
     .grs2 {
-        @include flex(end , none , none , none);
+        @include flex(end, none, none, none);
 
         img {
-            @include margin(2px , 2px , 2px , 2px);
+            @include margin(2px, 2px, 2px, 2px);
         }
     }
 }
 
 .product2_col4 {
-    @include margin(19px , none , none , none);
+    @include margin(19px, none, none, none);
 
     p {
         color: #94979A;
-        @include font(19px , none);
+        @include font(19px, none);
     }
 }
 
-
 .product3 {
-    padding: 0px 22.125vw 0px 22.125vw;
-    @include margin(150px , none , none , none);
+    padding: 0px 16.125vw 0px 16.125vw;
+    @include margin(150px, none, none, none);
 }
 
 .product3_col1 {
-    @include flex(center , none , none , none);
+    @include flex(center, none, none, none);
 }
 
 .product3_col2 {
-    @include flex(start , center , row , none);
+    @include flex(start, center, row, none);
 
     p {
         padding-top: 30px;
         margin: 0;
-        @include margin(none , none , none , -20px);
-        @include font(20px , 300);
+        @include margin(none, none, none, -20px);
+        @include font(20px, 300);
         color: red;
     }
 }
 
 .product3_col3 {
-    @include flex(space-between , none , column , none);
+    @include flex(space-between, none, column, none);
 
     img {
         @include width(50px);
@@ -1023,52 +1110,51 @@ body {
     }
 
     p {
-        @include margin(5px , none , 5px , none);
-        @include font(18px , 600);
+        @include margin(5px, none, 5px, none);
+        @include font(18px, 600);
     }
 
     .grs3 {
-        @include flex(end , none , none , none);
+        @include flex(end, none, none, none);
 
         img {
-            @include margin(2px , 2px , 2px , 2px);
+            @include margin(2px, 2px, 2px, 2px);
         }
     }
 }
 
 .product3_col4 {
-    @include margin(19px , none , none , none);
+    @include margin(19px, none, none, none);
 
     p {
         color: #94979A;
-        @include font(19px , none);
+        @include font(19px, none);
     }
 }
 
-
 .product4 {
-    padding: 0px 22.125vw 0px 22.125vw;
-    @include margin(150px , none , none , none);
+    padding: 0px 16.125vw 0px 16.125vw;
+    @include margin(150px, none, none, none);
 }
 
 .product4_col1 {
-    @include flex(center , none , none , none);
+    @include flex(center, none, none, none);
 }
 
 .product4_col2 {
-    @include flex(start , center , row , none);
+    @include flex(start, center, row, none);
 
     p {
         padding-top: 30px;
         margin: 0;
         margin-left: 0px;
-        @include font(20px , 300);
+        @include font(20px, 300);
         color: red;
     }
 }
 
 .product4_col3 {
-    @include flex(space-between , none , column , none);
+    @include flex(space-between, none, column, none);
 
     img {
         @include width(50px);
@@ -1076,52 +1162,51 @@ body {
     }
 
     p {
-        @include margin(5px , none , 5px , none);
-        @include font(18px , 900);
+        @include margin(5px, none, 5px, none);
+        @include font(18px, 900);
     }
 
     .grs4 {
-        @include flex(end , none , none , none);
+        @include flex(end, none, none, none);
 
         img {
-            @include margin(2px , 2px , 2px , 2px);
+            @include margin(2px, 2px, 2px, 2px);
         }
     }
 }
 
 .product4_col4 {
-    @include margin(19px , none , none , none);
+    @include margin(19px, none, none, none);
 
     p {
         color: #94979A;
-        @include font(19px , none);
+        @include font(19px, none);
     }
 }
 
-
 .product5 {
-    padding: 0px 22.125vw 0px 22.125vw;
-    @include margin(150px , none , none , none);
+    padding: 0px 16.125vw 0px 16.125vw;
+    @include margin(150px, none, none, none);
 }
 
 .product5_col1 {
-    @include flex(center , none , none , none);
+    @include flex(center, none, none, none);
 }
 
 .product5_col2 {
-    @include flex(start , center , row , none);
+    @include flex(start, center, row, none);
 
     p {
         padding-top: 30px;
         margin: 0;
         margin-left: 0px;
-        @include font(20px , 300);
+        @include font(20px, 300);
         color: red;
     }
 }
 
 .product5_col3 {
-    @include flex(space-between , none , column , none);
+    @include flex(space-between, none, column, none);
 
     img {
         @include width(50px);
@@ -1129,25 +1214,25 @@ body {
     }
 
     p {
-        @include margin(5px , none , 5px , none);
-        @include font(18px , 900);
+        @include margin(5px, none, 5px, none);
+        @include font(18px, 900);
     }
 
     .grs5 {
-        @include flex(end , none , none , none);
+        @include flex(end, none, none, none);
 
         img {
-            @include margin(2px , 2px , 2px , 2px);
+            @include margin(2px, 2px, 2px, 2px);
         }
     }
 }
 
 .product5_col4 {
-    @include margin(19px , none , none , none);
+    @include margin(19px, none, none, none);
 
     p {
         color: #94979A;
-        @include font(19px , none);
+        @include font(19px, none);
     }
 }
 
@@ -1155,139 +1240,175 @@ body {
     @include backgroundImg;
 }
 
-
 @media all and (min-width:768px) {
     .what_about_golestan_row1 {
-        @include flex(center , none , none , none);
+        @include flex(center, none, none, none);
     }
+
     .golestan_tea_container2_col1 {
-        @include flex(start , none , none , none);
+        @include flex(start, none, none, none);
     }
+
     .golestan_tea_container2_col2 {
-        @include flex(none , end , none , none);
+        @include flex(none, end, none, none);
     }
+
     .product1_row1 {
         margin: 0;
     }
+
     .product1_row2 {
-        @include flex(end , none , none , none);
+        @include flex(end, none, none, none);
         margin: 0;
     }
+
     .product1 {
-        @include flex(center , none , none , none);
+        @include flex(center, none, none, none);
     }
+
     .product1_col3 {
-        @include flex(none , none , row , none);
+        @include flex(none, none, row, none);
+
         p {
             @include width(50%);
         }
+
         .grs1 {
             @include width(50%);
         }
     }
+
     .line_8 {
         margin: 0;
     }
+
     .product2_row1 {
         margin: 0;
     }
+
     .product2_row2 {
         margin: 0;
     }
+
     .product2 {
-        @include flex(center , none , none , none);
+        @include flex(center, none, none, none);
     }
+
     .product2_col3 {
-        @include flex(none , none , row , none);
-        p {
-            @include width(50%);
-        }
-        .grs2 {
-            @include width(50%);
-        }
-    }
-    .product3_row1 {
-        margin: 0;
-    }
-    .product3_row2 {
-        margin: 0;
-    }
-    .product3 {
-        @include flex(center , none , none , none);
-    }
-    .product3_col3 {
-        @include flex(none , none , row , none);
-        p {
-            @include width(50%);
-        }
-        .grs3 {
-            @include width(50%);
-        }
-    }
-    .product4_row1 {
-        margin: 0;
-    }
-    .product4_row2 {
-        margin: 0;
-    }
-    .product4 {
-        @include flex(center , none , none , none);
-    }
-    .product4_col3 {
-        @include flex(none , none , row , none);
-        p {
-            @include width(50%);
-        }
-        .grs4 {
-            @include width(50%);
-        }
-    }
-    .product5_row1 {
-        margin: 0;
-    }
-    .product5_row2 {
-        margin: 0;
-    }
-    .product5 {
-        @include flex(center , none , none , none);
-    }
-    .product5_col3 {
-        @include flex(none , none , row , none);
+        @include flex(none, none, row, none);
 
         p {
             @include width(50%);
         }
+
+        .grs2 {
+            @include width(50%);
+        }
+    }
+
+    .product3_row1 {
+        margin: 0;
+    }
+
+    .product3_row2 {
+        margin: 0;
+    }
+
+    .product3 {
+        @include flex(center, none, none, none);
+    }
+
+    .product3_col3 {
+        @include flex(none, none, row, none);
+
+        p {
+            @include width(50%);
+        }
+
+        .grs3 {
+            @include width(50%);
+        }
+    }
+
+    .product4_row1 {
+        margin: 0;
+    }
+
+    .product4_row2 {
+        margin: 0;
+    }
+
+    .product4 {
+        @include flex(center, none, none, none);
+    }
+
+    .product4_col3 {
+        @include flex(none, none, row, none);
+
+        p {
+            @include width(50%);
+        }
+
+        .grs4 {
+            @include width(50%);
+        }
+    }
+
+    .product5_row1 {
+        margin: 0;
+    }
+
+    .product5_row2 {
+        margin: 0;
+    }
+
+    .product5 {
+        @include flex(center, none, none, none);
+    }
+
+    .product5_col3 {
+        @include flex(none, none, row, none);
+
+        p {
+            @include width(50%);
+        }
+
         .grs5 {
             @include width(50%);
         }
     }
+
     .golestan_footer_col3 {
         p {
             @include width(90%);
             text-align: start;
         }
     }
+
     .golestan_footer_col4 {
         p {
             @include width(90%);
             text-align: start;
         }
     }
+
     .golestan_footer_col5 {
         p {
             @include width(90%);
             text-align: start;
         }
     }
+
     .golestan_footer_col6 {
         p {
             @include width(90%);
             text-align: start;
         }
     }
+
     .golestan_footer_row2 {
         @include backgroundImg;
-        @include paddinglr(65px , 65px);
+        @include paddinglr(65px, 65px);
         justify-content: center;
     }
 }

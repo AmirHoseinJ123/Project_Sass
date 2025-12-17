@@ -1,3 +1,23 @@
+@font-face {
+  font-family: "IRANSansWeb";
+  src: url("../fonts/IRANSansWeb-Light.eot");
+  src: url("IRANSansWeb-Light.eot?#iefix") format("embedded-opentype"), url("../fonts/IRANSansWeb-Light.woff2") format("woff2"), url("../fonts/IRANSansWeb-Light.woff") format("woff"), url("../fonts/IRANSansWeb-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto-Regular.eot");
+  src: url("Roboto-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/Roboto-Regular.woff2") format("woff2"), url("../fonts/Roboto-Regular.woff") format("woff"), url("../fonts/Roboto-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+* {
+  font-family: "Roboto";
+}
+
 body {
   width: 100%;
 }
@@ -63,14 +83,20 @@ body {
   flex-wrap: none;
 }
 .nav_col3 ul li {
+  font-family: "IRANSansWeb";
   list-style-type: none;
-  margin-top: noen;
+  margin-top: none;
   margin-right: 20px;
   margin-bottom: none;
   margin-left: 20px;
   color: #AFB2B4;
   font-size: 16px;
   font-weight: none;
+}
+.nav_col3 ul li:hover {
+  cursor: pointer;
+  transition: all 300ms ease 0s;
+  color: #c1c4c7;
 }
 
 .nav_dropdown_btn_icon {
@@ -432,6 +458,12 @@ body {
   border-radius: 10px;
   color: #7C7D7E;
 }
+.rice_col1 .rice_p2:hover {
+  transition: all 300ms ease 0s;
+  background-color: red;
+  color: white;
+  cursor: pointer;
+}
 
 .img-tea {
   display: flex;
@@ -497,6 +529,12 @@ body {
   border-radius: 10px;
   color: #7C7D7E;
 }
+.tea_col1 .tea_p2:hover {
+  transition: all 300ms ease 0s;
+  background-color: red;
+  color: white;
+  cursor: pointer;
+}
 
 .img-pistachios {
   display: flex;
@@ -561,6 +599,12 @@ body {
   border: 1px solid #7C7D7E;
   border-radius: 10px;
   color: #7C7D7E;
+}
+.pistachios_col1 .pistachios_p2:hover {
+  transition: all 300ms ease 0s;
+  background-color: red;
+  color: white;
+  cursor: pointer;
 }
 
 .golestan_social {
@@ -658,6 +702,12 @@ body {
   border-radius: 10px;
   color: #7C7D7E;
 }
+.golestan_charitable_col1 .golestan_charitable_p2:hover {
+  transition: all 300ms ease 0s;
+  background-color: red;
+  color: white;
+  cursor: pointer;
+}
 
 .golestan_footer_col1 {
   background-color: #EEEFEF;
@@ -699,6 +749,11 @@ body {
   margin-right: auto;
   margin-bottom: 0px;
   margin-left: auto;
+}
+.golestan_footer_col3 p:hover {
+  cursor: pointer;
+  transition: all 300ms ease 0s;
+  color: #c1c4c7;
 }
 .golestan_footer_col3 .first_p1_p {
   margin-top: 30px;
@@ -745,11 +800,16 @@ body {
   flex-wrap: none;
 }
 .golestan_footer_col4 p {
-  color: #BCBEC0;
+  color: #828991;
   margin-top: 0px;
   margin-right: auto;
   margin-bottom: 0px;
   margin-left: auto;
+}
+.golestan_footer_col4 p:hover {
+  cursor: pointer;
+  transition: all 300ms ease 0s;
+  color: #c1c4c7;
 }
 .golestan_footer_col4 .first_p1_p {
   margin-top: 30px;
@@ -776,11 +836,16 @@ body {
   flex-wrap: none;
 }
 .golestan_footer_col5 p {
-  color: #BCBEC0;
+  color: #828991;
   margin-top: 0px;
   margin-right: auto;
   margin-bottom: 0px;
   margin-left: auto;
+}
+.golestan_footer_col5 p:hover {
+  cursor: pointer;
+  transition: all 300ms ease 0s;
+  color: #c1c4c7;
 }
 .golestan_footer_col5 .first_p1_p {
   margin-top: 30px;
@@ -807,11 +872,16 @@ body {
   flex-wrap: none;
 }
 .golestan_footer_col6 p {
-  color: #BCBEC0;
+  color: #828991;
   margin-top: 0px;
   margin-right: auto;
   margin-bottom: 0px;
   margin-left: auto;
+}
+.golestan_footer_col6 p:hover {
+  cursor: pointer;
+  transition: all 300ms ease 0s;
+  color: #c1c4c7;
 }
 .golestan_footer_col6 .first_p1_p {
   margin-top: 30px;
@@ -919,6 +989,12 @@ body {
     margin-left: 9.125vw;
     background-color: #FFFFFF;
     border-radius: 8px;
+  }
+  .golestan_tea_container_col2 .golestan_tea_container_col2_p2:hover {
+    cursor: pointer;
+    transition: all 300ms ease 0s;
+    background-color: red;
+    color: #ffffff;
   }
   .golestan_tea_container_col2 .golestan_tea_container_col2_p1 {
     font-size: none;
@@ -1173,7 +1249,7 @@ body {
   margin-right: none;
   margin-bottom: none;
   margin-left: none;
-  padding: 0px 22.125vw 0px 22.125vw;
+  padding: 0px 16.125vw 0px 16.125vw;
 }
 
 .product1_col1 {
@@ -1249,7 +1325,7 @@ body {
 }
 
 .product2 {
-  padding: 0px 22.125vw 0px 22.125vw;
+  padding: 0px 16.125vw 0px 16.125vw;
   margin-top: 150px;
   margin-right: none;
   margin-bottom: none;
@@ -1329,7 +1405,7 @@ body {
 }
 
 .product3 {
-  padding: 0px 22.125vw 0px 22.125vw;
+  padding: 0px 16.125vw 0px 16.125vw;
   margin-top: 150px;
   margin-right: none;
   margin-bottom: none;
@@ -1409,7 +1485,7 @@ body {
 }
 
 .product4 {
-  padding: 0px 22.125vw 0px 22.125vw;
+  padding: 0px 16.125vw 0px 16.125vw;
   margin-top: 150px;
   margin-right: none;
   margin-bottom: none;
@@ -1486,7 +1562,7 @@ body {
 }
 
 .product5 {
-  padding: 0px 22.125vw 0px 22.125vw;
+  padding: 0px 16.125vw 0px 16.125vw;
   margin-top: 150px;
   margin-right: none;
   margin-bottom: none;
