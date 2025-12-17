@@ -1,70 +1,62 @@
 @import "main.scss";
 
 body {
-    width: 100%;
-    height: 3000px
+    @include width(100%);
 }
 
 .nav {
-    width: 100%;
-    background-image: $bacground_image;
-    background-repeat: $bacground_repeat;
+    @include width(100%);
+    @include backgroundImg;
     padding: 0;
-    display: flex;
-    justify-content: center;
+    @include flex(center , none , none , none);
     position: fixed;
     z-index: 999;
 }
 
 .golestan_logo {
-    width: 143px;
+    @include width(143px);
     height: 88px;
-    margin-top: 6px;
-    margin-bottom: 6px;
+    @include margin(6px , none , 6px , none);
 }
 
 .nav_row1 {
     padding: 0;
-    width: 100%;
+    @include width(100%);
 }
 
 .nav_col1 {
     padding: 0;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include width(100%);
+    @include flex(center , center , none , none);
 }
 
 .nav_col2 {
-    display: flex;
-    align-items: end;
+    @include flex(none , center , none , none);
 }
 
 .nav_col3 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
+    @include flex(center , center , row , none);
 
     ul {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include flex(center , center , none , none);
 
         li {
             list-style-type: none;
-            margin-left: 20px;
-            margin-right: 20px;
+            @include margin(noen , 20px , none , 20px);
             color: #AFB2B4;
-            font-size: 16px;
+            @include font(16px , none);
         }
     }
 }
 
 .nav_dropdown_btn_icon {
-    font-size: 30px;
+    @include font(30px , none);
     color: white;
+}
+
+.golestan_tea_container2 {
+    transform: translateY(181px);
+    background-image: linear-gradient(to bottom, #FFFFFF, #D3D3D3);
 }
 
 .golestan_tea_container {
@@ -72,31 +64,45 @@ body {
     background-image: linear-gradient(to bottom, #FFFFFF, #D3D3D3);
 }
 
+.golestan_tea_container2_col1 {
+    @include flex(center , none , none , none);
+}
+
 .golestan_tea_container_col1 {
-    display: flex;
-    justify-content: center;
+    @include flex(center , none , none , none);
+}
+
+.golestan_tea_container2_col2 {
+    h1 {
+        @include font(35px , 400);
+        color: red;
+        @include margin(none , none , none , 25px);
+    }
+
+    p {
+        @include font(25px , 400);
+        @include margin(none , none , 40px , 23px);
+        color: #7C7D7E;
+    }
 }
 
 .golestan_tea_container_col2 {
     h1 {
-        font-size: 35px;
-        font-weight: 400;
+        @include font(35px , 400);
         color: red;
-        margin-left: 25px;
+        @include margin(none , none , none , 25px);
     }
 
     p {
-        font-size: 25px;
-        font-weight: 400;
-        margin-left: 23px;
-        margin-bottom: 40px;
+        @include font(25px , 400);
+        @include margin(none , none , 40px , 23px);
         color: #7C7D7E;
     }
 }
 
 .line_1 {
-    margin: 195px auto 0px auto;
-    width: 95%;
+    @include margin(195px , auto , 0px , auto);
+    @include width(95%);
     align-self: center;
     height: 1px;
     background-color: #D3D3D3;
@@ -104,50 +110,181 @@ body {
 
 .what_about_golestan_col1 {
     h1 {
-        margin-top: 80px;
-        margin-left: 10px;
-        font-size: 22px;
-        font-weight: 500;
+        @include margin(80px , none , none , 10px);
+        @include font(22px , 500);
         color: red;
     }
 
     p {
-        margin-top: 10px;
-        margin-left: 10px;
-        font-size: 18px;
-        font-weight: 400;
+        @include margin(10px , none , none , 10px);
+        @include font(18px , 400);
         color: #7C7D7E;
         text-align: justify;
         line-height: 32px;
     }
 }
 
+.what_about_golestan2_col1 {
+    h1 {
+        @include margin(80px , none , none , 10px);
+        @include font(22px , 500);
+        color: red;
+    }
+
+    p {
+        @include margin(10px , none , none , 10px);
+        @include font(18px , 400);
+        color: #7C7D7E;
+        text-align: justify;
+        line-height: 32px;
+    }
+}
+
+.strange_list_container {
+    @include margin(100px , none , 130px , none);
+    @include flex(center , center , none , none);
+    padding: 0;
+
+    .strange_list_container_row1 {
+        @include width(100%);
+        align-self: center;
+        @include flex(center , center , row , nowrap);
+
+        .strange_list_container_col1 {
+            @include width(fit-content);
+            @include margin(0px , 10px , 0px , 10px);
+            @include flex(center , end , column , none);
+
+            img {
+                min-width: 168.7px;
+            }
+
+            p {
+                @include margin(5px , 0px , 15px , 0px);
+                min-width: 168.7px;
+                text-align: center;
+                color: #7C7D7E;
+            }
+
+            padding: 0;
+
+            .strange_list_container_col1_line1 {
+                min-width: 168.7px;
+                height: 1px;
+                background-color: #4a4a4a;
+            }
+        }
+
+        .strange_list_container_col2 {
+            @include width(fit-content);
+            @include margin(0px , 10px , 0px , 10px);
+            @include flex(center , end , column , none);
+
+            img {
+                min-width: 168.7px;
+            }
+
+            p {
+                @include margin(5px , 0px , 15px , 0px);
+                min-width: 168.7px;
+                text-align: center;
+                color: #7C7D7E;
+            }
+
+            padding: 0;
+
+            .strange_list_container_col1_line2 {
+                min-width: 168.7px;
+                height: 1px;
+                background-color: #4a4a4a;
+            }
+        }
+
+        .strange_list_container_col3 {
+            @include width(fit-content);
+            @include margin(0px , 10px , 0px , 10px);
+            @include flex(center , start , column , none);
+
+            img {
+                min-width: 168.7px;
+            }
+
+            p {
+                @include margin(5px , 0px , 15px , 0px);
+                min-width: 168.7px;
+                text-align: center;
+                color: #7C7D7E;
+            }
+
+            padding: 0;
+
+            .strange_list_container_col1_line3 {
+                min-width: 168.7px;
+                height: 1px;
+                background-color: #4a4a4a;
+            }
+        }
+
+        .strange_list_container_col4 {
+            @include width(fit-content);
+            @include margin(0px , 10px , 0px , 10px);
+            @include flex(center , start , column , none);
+
+            img {
+                min-width: 168.7px;
+            }
+
+            p {
+                @include margin(5px , 0px , 15px , 0px);
+                min-width: 168.7px;
+                text-align: center;
+                color: #7C7D7E;
+            }
+
+            padding: 0;
+
+            .strange_list_container_col1_line4 {
+                min-width: 168.7px;
+                height: 1px;
+                background-color: #4a4a4a;
+            }
+        }
+    }
+}
+
 .line_2 {
-    margin: 40px auto 0px auto;
-    width: 95%;
+    @include margin(40px , auto , 0px , auto);
+    @include width(95%);
+    align-self: center;
+    height: 1px;
+    background-color: #D3D3D3;
+}
+
+.line_22 {
+    @include margin(40px , auto , 0px , auto);
+    @include width(95%);
     align-self: center;
     height: 1px;
     background-color: #D3D3D3;
 }
 
 .img-rice {
-    display: flex;
-    justify-content: center;
+    @include flex(center , none , none , none);
     overflow: hidden;
-    margin-top: 25px;
-    margin-left: 1px;
-}
+    @include margin(25px , none , none , 1px);
 
+}
 .image-rice {
     height: 241px;
 }
+
 
 .p-rice {
     padding-top: 6px;
     padding-bottom: 6px;
     color: rgb(255, 255, 255);
     background-color: red;
-    font-size: 40px;
+    @include font(40px , none);
     direction: rtl;
     padding-right: 20px;
 }
@@ -155,32 +292,26 @@ body {
 
 .rice_col1 {
     h1 {
-        margin-top: 50px;
-        margin-left: 10px;
-        font-size: 22px;
-        font-weight: 500;
+        @include margin(50px , none , none , 10px);
+        @include font(22px , 500);
         color: red;
     }
 
     .rice_p1 {
-        margin-top: 10px;
-        margin-left: 10px;
-        font-size: 18px;
-        font-weight: 400;
+        @include margin(10px , none , none , 10px);
+        @include font(18px , 400);
         color: #7C7D7E;
         text-align: justify;
         line-height: 32px;
     }
 
     .rice_p2 {
-        margin-top: 20px;
-        margin-left: 5px;
-        font-size: 16px;
-        width: fit-content;
+        @include margin(20px , none , none , 5px);
+        @include font(16px , none);
+        @include width(fit-content);
         padding-top: 8px;
         padding-bottom: 8px;
-        padding-left: 25px;
-        padding-right: 25px;
+        @include paddinglr(25px, 25px);
         border: 1px solid #7C7D7E;
         border-radius: 10px;
         color: #7C7D7E;
@@ -188,11 +319,9 @@ body {
 }
 
 .img-tea {
-    display: flex;
-    justify-content: center;
+    @include flex(center , none , none , none);
     overflow: hidden;
-    margin-top: 90px;
-    margin-left: 1px;
+    @include margin(90px , none , none , 1px);
 }
 
 .image-tea {
@@ -204,7 +333,7 @@ body {
     padding-bottom: 6px;
     color: rgb(255, 255, 255);
     background-color: red;
-    font-size: 40px;
+    @include font(40px , none);
     direction: rtl;
     padding-right: 20px;
 }
@@ -212,32 +341,26 @@ body {
 
 .tea_col1 {
     h1 {
-        margin-top: 50px;
-        margin-left: 10px;
-        font-size: 22px;
-        font-weight: 500;
+        @include margin(50px , none , none , 10px);
+        @include font(22px , 500);
         color: red;
     }
 
     .tea_p1 {
-        margin-top: 10px;
-        margin-left: 10px;
-        font-size: 18px;
-        font-weight: 400;
+        @include margin(10px , none , none , 10px);
+        @include font(18px , 400);
         color: #7C7D7E;
         text-align: justify;
         line-height: 32px;
     }
 
     .tea_p2 {
-        margin-top: 20px;
-        margin-left: 5px;
-        font-size: 16px;
-        width: fit-content;
+        @include margin(20px , none , none , 5px);
+        @include font(16px , none);
+        @include width(fit-content);
         padding-top: 8px;
         padding-bottom: 8px;
-        padding-left: 25px;
-        padding-right: 25px;
+        @include paddinglr(25px , 25px);
         border: 1px solid #7C7D7E;
         border-radius: 10px;
         color: #7C7D7E;
@@ -247,11 +370,9 @@ body {
 
 
 .img-pistachios {
-    display: flex;
-    justify-content: center;
+    @include flex(center , none , none , none);
     overflow: hidden;
-    margin-top: 10px;
-    margin-left: 1px;
+    @include margin(10px , none , none , 1px);
 }
 
 .image-pistachios {
@@ -263,7 +384,7 @@ body {
     padding-bottom: 6px;
     color: rgb(255, 255, 255);
     background-color: red;
-    font-size: 40px;
+    @include font(40px , none);
     direction: rtl;
     padding-right: 20px;
 }
@@ -271,32 +392,26 @@ body {
 
 .pistachios_col1 {
     h1 {
-        margin-top: 50px;
-        margin-left: 10px;
-        font-size: 22px;
-        font-weight: 500;
+        @include margin(50px , none , none , 10px);
+        @include font(22px , 500);
         color: red;
     }
 
     .pistachios_p1 {
-        margin-top: 10px;
-        margin-left: 10px;
-        font-size: 18px;
-        font-weight: 400;
+        @include margin(10px , none , none , 10px);
+        @include font(18px , 400);
         color: #7C7D7E;
         text-align: justify;
         line-height: 32px;
     }
 
     .pistachios_p2 {
-        margin-top: 20px;
-        margin-left: 5px;
-        font-size: 16px;
-        width: fit-content;
+        @include margin(20px , none , none , 5px);
+        @include font(16px , none);
+        @include width(fit-content);
         padding-top: 8px;
         padding-bottom: 8px;
-        padding-left: 25px;
-        padding-right: 25px;
+        @include paddinglr(25px , 25px);
         border: 1px solid #7C7D7E;
         border-radius: 10px;
         color: #7C7D7E;
@@ -306,55 +421,53 @@ body {
 
 .golestan_social {
     background-color: #105153;
+
+    .golestan_social_row1 {
+        .golestan_social_col1 {
+            @include flex(center , baseline , row , none);
+            padding-top: 250px;
+
+            h6 {
+                color: #009DA2;
+                @include font(30px , 400);
+                margin: 0;
+            }
+
+            p {
+                color: #00D8DF;
+                @include font(20px , 400);
+                margin: 0;
+                @include margin(none , none , none , 5px);
+            }
+        }
+
+        .golestan_social_col2 {
+            @include flex(center , center , column , none);
+            padding: 0;
+
+            .image-building {
+                @include width(395px);
+                height: 344px;
+                transform: translateY(70px);
+            }
+        }
+
+    }
 }
 
-.golestan_social_col1 {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: baseline;
-    padding-top: 250px;
-
-    h6 {
-        color: #009DA2;
-        font-size: 30px;
-        font-weight: 400;
-        margin: 0;
-    }
-
-    p {
-        color: #00D8DF;
-        font-size: 20px;
-        font-weight: 400;
-        margin: 0;
-        margin-left: 5px;
-    }
-}
 
 .line_3 {
-    margin: 30px auto 0px auto;
-    width: 100%;
+    @include margin(30px , auto , 0px , auto);
+    @include width(100%);
     align-self: center;
     height: 1px;
     background-color: #07787C;
 }
 
-.golestan_social_col2 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding: 0;
-}
 
-.image-building {
-    width: 395px;
-    height: 344px;
-    transform: translateY(70px);
-}
 
 .line_4 {
-    width: 100%;
+    @include width(100%);
     align-self: center;
     height: 20px;
     background-color: #E9D69F;
@@ -362,32 +475,26 @@ body {
 
 .golestan_charitable_col1 {
     h1 {
-        margin-top: 85px;
-        margin-left: 10px;
-        font-size: 22px;
-        font-weight: 500;
+        @include margin(85px , none , none , 10px);
+        @include font(22px , 500);
         color: red;
     }
 
     .golestan_charitable_p1 {
-        margin-top: 20px;
-        margin-left: 10px;
-        font-size: 18px;
-        font-weight: 400;
+        @include margin(20px , none , none , 10px);
+        @include font(18px , 400);
         color: #7C7D7E;
         text-align: justify;
         line-height: 32px;
     }
 
     .golestan_charitable_p2 {
-        margin-top: 20px;
-        margin-left: 5px;
-        font-size: 16px;
-        width: fit-content;
+        @include margin(20px , none , none , 10px);
+        @include font(16px , none);
+        @include width(fit-content);
         padding-top: 8px;
         padding-bottom: 8px;
-        padding-left: 25px;
-        padding-right: 25px;
+        @include paddinglr(25px , 25px);
         border: 1px solid #7C7D7E;
         border-radius: 10px;
         color: #7C7D7E;
@@ -396,9 +503,7 @@ body {
 
 .golestan_footer_col1 {
     background-color: #EEEFEF;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+    @include flex(center , none , row , none);
     margin-top: 65px;
 
     img {
@@ -411,7 +516,7 @@ body {
     padding: 0;
 
     .line_5 {
-        width: 100%;
+        @include width(100%);
         align-self: center;
         height: 20px;
         background-color: #ED1C24;
@@ -419,234 +524,356 @@ body {
 }
 
 .golestan_footer_col3 {
-    background-image: $bacground_image;
-    background-repeat: $bacground_repeat;
+    @include backgroundImg;
     padding-top: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    @include flex(none , center , column , none);
 
     p {
         color: #828991;
-        margin: 0px auto 0px auto;
+        @include margin(0px , auto , 0px , auto);
     }
 
     .first_p1_p {
-        margin: 30px auto 0px auto;
+        @include margin(30px , auto , 0px , auto);
     }
 
     h6 {
-        margin-top: 5px;
-        margin-bottom: 8px;
+        @include margin(5px , none , 8px , none);
         color: #ffffff;
     }
 }
 
 .line_6 {
-    margin: 25px auto 0px auto;
-    width: 95%;
+    @include margin(25px , auto , 0px , auto);
+    @include width(95%);
     height: 1px;
     background-color: #828991;
 }
 
 .line_7 {
-    margin: 0px auto 0px auto;
-    width: 95%;
+    @include margin(0px , auto , 0px , auto);
+    @include width(95%);
     height: 1px;
     background-color: #828991;
 }
 
 .golestan_footer_col4 {
-    background-image: $bacground_image;
-    background-repeat: $bacground_repeat;
+    @include backgroundImg;
     padding-top: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    @include flex(none , center , column , none);
 
     p {
         color: #BCBEC0;
-        margin: 0px auto 0px auto;
+        @include margin(0px , auto , 0px , auto);
     }
 
     .first_p1_p {
-        margin: 30px auto 0px auto;
+        @include margin(30px , auto , 0px , auto);
     }
 
     h6 {
-        margin-top: 5px;
-        margin-bottom: 8px;
+        @include margin(5px , none , 8px , none);
         color: #ffffff;
     }
 }
 
 .golestan_footer_col5 {
-    background-image: $bacground_image;
-    background-repeat: $bacground_repeat;
+    @include backgroundImg;
     padding-top: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    @include flex(none , center , column , none);
 
     p {
         color: #BCBEC0;
-        margin: 0px auto 0px auto;
+        @include margin(0px , auto , 0px , auto);
     }
 
     .first_p1_p {
-        margin: 30px auto 0px auto;
+        @include margin(30px , auto , 0px , auto);
     }
 
     h6 {
-        margin-top: 5px;
-        margin-bottom: 8px;
+        @include margin(5px , none , 8px , none);
         color: #ffffff;
     }
 }
 
 .golestan_footer_col6 {
-    background-image: $bacground_image;
-    background-repeat: $bacground_repeat;
+    @include backgroundImg;
     padding-top: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    @include flex(none , center , column , none);
 
     p {
         color: #BCBEC0;
-        margin: 0px auto 0px auto;
+        @include margin(0px , auto , 0px , auto);
     }
 
     .first_p1_p {
-        margin: 30px auto 0px auto;
+        @include margin(30px , auto , 0px , auto);
     }
 
     h6 {
-        margin-top: 5px;
-        margin-bottom: 8px;
+        @include margin(5px , none , 8px , none);
         color: #ffffff;
     }
 }
 
 
 .golestan_footer_col7 {
-    background-image: $bacground_image;
-    background-repeat: $bacground_repeat;
+    @include backgroundImg;
     padding-top: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    @include flex(none , center , column , none);
 
     .golestan_footer_col7_p1 {
         color: #9F9F9F;
-        margin: 35px auto 0px auto;
+        @include margin(35px , auto , 0px , auto);
     }
 
     .golestan_footer_col7_p2 {
         color: #7B7B7B;
-        margin: 0px auto 0px auto;
-        font-size: 14px;
+        @include margin(0px , auto , 0px , auto);
+        @include font(14px , none);
         padding-bottom: 45px;
     }
 }
 
 @media all and (min-width:768px) {
-    .golestan_tea_container_row1 {
-        flex-direction: row-reverse;
+    .golestan_tea_container2_row1 {
+        @include flex(none , none , row-reverse , none);
     }
 
-    .golestan_tea_container_col2 {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+    .golestan_tea_container_row1 {
+        @include flex(none , center , row-reverse , none);
+    }
+
+    .golestan_tea_container2_col2 {
+        @include flex(center , none , column , none);
 
         h1 {
-            font-size: 55px;
-            font-weight: 400;
+            @include font(55px , 400);
             color: red;
-            margin-left: 65px;
+            @include margin(none , none , none , 65px);
         }
 
         p {
-            font-size: 25px;
-            font-weight: 400;
-            margin-left: 63px;
-            margin-bottom: 40px;
+            @include font(25px , 400);
+            @include margin(none , none , 40px , 63px);
             color: #7C7D7E;
             text-align: start;
         }
+    }
+
+    .golestan_tea_container_col2 {
+        @include flex(center , end , column , none);
+
+        h1 {
+            align-self: flex-start;
+            @include paddinglr(8.125vw , 8.125vw)
+        }
+
+        .golestan_tea_container_col2_p2 {
+            align-self: flex-start;
+            @include font(14px , none);
+            padding: 12px 24px 12px 24px;
+            @include margin(none , none , none , 9.125vw);
+            background-color: #FFFFFF;
+            border-radius: 8px;
+        }
+
+        .golestan_tea_container_col2_p1 {
+            @include font(none , 400);
+            font-size: 18px !important;
+            @include margin(none , none , none , 23px);
+            @include paddinglr(8.125vw , 8.125vw);
+            color: #7C7D7E;
+        }
+    }
+
+    .golestan_tea_container_col1 {
+        @include flex(center , start , column , none);
+
+        h1 {
+            align-self: flex-start;
+        }
+
+        .golestan_tea_container_col_p2 {
+            align-self: flex-start;
+            @include font(14px , none);
+            padding: 12px 24px 12px 24px;
+            background-color: #FFFFFF;
+            border-radius: 8px;
+        }
+
+        .golestan_tea_container_col_p1 {
+            @include font(none , 400);
+            font-size: 18px !important;
+            @include margin(none , none , none , 23px);
+            color: #7C7D7E;
+        }
+    }
+
+    .image-rice {
+        min-width: 1600px;
+        height: 500px;
+        margin-left: 0;
+    }
+
+    .image-tea {
+        min-width: 1600px;
+        height: 500px;
+        margin-left: 0;
+    }
+
+    .image-pistachios {
+        min-width: 1600px;
+        height: 500px;
+        margin-left: 0;
+    }
+
+    .p-rice {
+        @include width(fit-content);
+        padding: 50px 180px 30px 30px !important;
+        color: rgb(255, 255, 255);
+        background-color: red;
+        @include font(40px , none);
+        direction: ltr;
+        padding-right: 20px;
+        transform: translateY(-120px);
+        @include margin(none , none , 30px , 29.125vw);
+    }
+
+    .rice {
+        @include margin(-120px , none , none , none);
+    }
+
+    .line_22 {
+        transform: translateY(40px);
+    }
+
+    .rice_col1 {
+        @include paddinglr(29.125vw , 29.125vw);
+    }
+
+    .p-tea {
+        @include width(fit-content);
+        padding: 50px 180px 30px 30px !important;
+        color: rgb(255, 255, 255);
+        background-color: red;
+        @include font(40px , none);
+        direction: ltr;
+        padding-right: 20px;
+        transform: translateY(-120px);
+        @include margin(none , none , 30px , 29.125vw);
+    }
+
+    .tea {
+        @include margin(-120px , none , none , none);
+    }
+
+    .tea_col1 {
+        @include paddinglr(29.125vw , 29.125vw);
+    }
+
+    .p-pistachios {
+        @include width(fit-content);
+        padding: 50px 180px 30px 30px !important;
+        color: rgb(255, 255, 255);
+        background-color: red;
+        @include font(40px , none);
+        direction: ltr;
+        padding-right: 20px;
+        transform: translateY(-120px);
+        @include margin(none , none , 30px , 29.215vw);
+    }
+
+    .pistachios {
+        @include margin(-120px , none , none , none);
+    }
+
+    .pistachios_col1 {
+        @include paddinglr(29.125vw , 29.125vw);
+    }
+
+    .golestan_charitable_col1 {
+        @include paddinglr(29.125vw , 29.125vw);
+    }
+
+    .what_about_golestan_col1 {
+        @include paddinglr(29.125vw , 29.125vw);
+    }
+
+    .what_about_golestan2_col1 {
+        @include paddinglr(29.125vw , 29.125vw);
+    }
+
+    .what_about_golestan_col2 {
+        @include paddinglr(29.125vw , 29.125vw);
     }
 }
 
 
 @media all and (min-width:992px) {
-    .golestan_logo{
+    .golestan_logo {
         transform: translateY(50px);
-        margin-left: 20px;
+        @include margin(none , none , none , 16.125vw);
     }
-    .seprator{
+
+    .seprator {
         margin: 0 !important;
     }
-    .nav_row1{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: end;
+
+    .nav_row1 {
+        @include flex(space-between , end , row , none);
     }
-    .nav_col1{
-        width: fit-content;
+
+    .nav_col1 {
+        @include width(fit-content);
     }
-    .nav_col3{
+
+    .nav_col3 {
         padding: 0;
         display: flex;
-        ul{
-            width: fit-content;
+
+        ul {
+            @include width(fit-content);
             padding: 0;
             margin: 0;
-            margin-bottom: 20px;
+            @include margin(none , none , 20px , none);
         }
     }
-    .golestan_tea_container_col2{
-        display: flex;
-        justify-content: center;
-        align-items: end;
-        flex-direction: column;
-        h1{
-            font-size: 55px;
+
+    .golestan_tea_container2_col2 {
+        @include flex(center , end , column , none);
+
+        h1 {
+            @include font(55px , none);
         }
     }
-    .golestan_tea_container_col1{
-        display: flex;
-        justify-content: center;
-        align-items: start;
-        flex-direction: column;
+
+    .golestan_tea_container2_col1 {
+        @include flex(center , start , column , none);
     }
-    .golestan_tea_container_row1{
-        display: flex;
-        flex-direction: row-reverse;
+
+    .golestan_tea_container2_row1 {
+        @include flex(none , none , row-reverse , none);
     }
 }
 
-// ====================== Page 2 ======================
+// ============================================ Page 2 ============================================
 
 .after_nav2 {
-    margin-top: 170px;
+    @include margin(170px , none , none , none);
 }
 
 .what_about_golestan_col2 {
     h1 {
-        margin-top: 20px;
-        margin-left: 10px;
-        font-size: 22px;
-        font-weight: 500;
+        @include margin(20px , none , none , 10px);
+        @include font(22px , 500);
         color: red;
     }
 
     p {
-        margin-top: 10px;
-        margin-left: 10px;
-        font-size: 18px;
-        font-weight: 400;
+        @include margin(10px , none , none , 10px);
+        @include font(18px , 400);
         color: #7C7D7E;
         text-align: justify;
         line-height: 32px;
@@ -654,511 +881,413 @@ body {
 }
 
 .line_8 {
-    margin: 5px auto 0px auto;
-    width: 100%;
+    @include margin(5px , auto , 0px , auto);
+    @include width(100%);
     height: 1px;
     background-color: #828991;
 }
 
 .product1 {
-    margin-top: 150px;
+    @include margin(150px , none , none , none);
+    padding: 0px 22.125vw 0px 22.125vw;
 }
 
 .product1_col1 {
-    display: flex;
-    justify-content: center;
+    @include flex(center , none , none , none);
 }
 
 .product1_col2 {
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    flex-direction: row;
+    @include flex(start , center , row , none);
 
     p {
         padding-top: 30px;
         margin: 0;
-        margin-left: -20px;
-        font-size: 20px;
-        font-weight: 300;
+        @include margin(none , none , none , -20px);
+        @include font(20px , 300);
         color: red;
     }
 }
 
 .product1_col3 {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    @include flex(space-between , none , column , none);
 
     img {
-        width: 50px;
+        @include width(50px);
         height: 45px;
     }
 
     p {
-        margin-top: 5px;
-        margin-bottom: 5px;
-        font-size: 18px;
-        font-weight: 900;
+        @include margin(5px , none , 5px , none);
+        @include font(18px , 900);
     }
 
     .grs1 {
-        display: flex;
-        justify-content: end;
+        @include flex(end , none , none , none);
 
         img {
-            margin: 2px;
+            @include margin(2px , 2px , 2px , 2px);
         }
     }
 }
 
 .product1_col4 {
-    margin-top: 19px;
+    @include margin(19px , none , none , none);
 
     p {
         color: #94979A;
-        font-size: 19px;
+        @include font(19px , none);
     }
 }
 
 
 .product2 {
-    margin-top: 150px;
+    padding: 0px 22.125vw 0px 22.125vw;
+    @include margin(150px , none , none , none);
 }
 
 .product2_col1 {
-    display: flex;
-    justify-content: center;
+    @include flex(center , none , none , none);
 }
 
 .product2_col2 {
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    flex-direction: row;
+    @include flex(start , center , row , none);
 
     p {
         padding-top: 30px;
         margin: 0;
-        margin-left: -20px;
-        font-size: 20px;
-        font-weight: 300;
+        @include margin(none , none , none , -20px);
+        @include font(20px , 300);
         color: red;
     }
 }
 
 .product2_col3 {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    @include flex(space-between , none , column , none);
 
     img {
-        width: 50px;
+        @include width(50px);
         height: 45px;
     }
 
     p {
-        margin-top: 5px;
-        margin-bottom: 5px;
-        font-size: 18px;
-        font-weight: 900;
+        @include margin(5px , none , 5px , none);
+        @include font(18px , 900);
     }
 
     .grs2 {
-        display: flex;
-        justify-content: end;
+        @include flex(end , none , none , none);
 
         img {
-            margin: 2px;
+            @include margin(2px , 2px , 2px , 2px);
         }
     }
 }
 
 .product2_col4 {
-    margin-top: 19px;
+    @include margin(19px , none , none , none);
 
     p {
         color: #94979A;
-        font-size: 19px;
+        @include font(19px , none);
     }
 }
 
 
 .product3 {
-    margin-top: 150px;
+    padding: 0px 22.125vw 0px 22.125vw;
+    @include margin(150px , none , none , none);
 }
 
 .product3_col1 {
-    display: flex;
-    justify-content: center;
+    @include flex(center , none , none , none);
 }
 
 .product3_col2 {
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    flex-direction: row;
+    @include flex(start , center , row , none);
 
     p {
         padding-top: 30px;
         margin: 0;
-        margin-left: -20px;
-        font-size: 20px;
-        font-weight: 300;
+        @include margin(none , none , none , -20px);
+        @include font(20px , 300);
         color: red;
     }
 }
 
 .product3_col3 {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    @include flex(space-between , none , column , none);
 
     img {
-        width: 50px;
+        @include width(50px);
         height: 45px;
     }
 
     p {
-        margin-top: 5px;
-        margin-bottom: 5px;
-        font-size: 18px;
-        font-weight: 900;
+        @include margin(5px , none , 5px , none);
+        @include font(18px , 600);
     }
 
     .grs3 {
-        display: flex;
-        justify-content: end;
+        @include flex(end , none , none , none);
 
         img {
-            margin: 2px;
+            @include margin(2px , 2px , 2px , 2px);
         }
     }
 }
 
 .product3_col4 {
-    margin-top: 19px;
+    @include margin(19px , none , none , none);
 
     p {
         color: #94979A;
-        font-size: 19px;
+        @include font(19px , none);
     }
 }
 
 
 .product4 {
-    margin-top: 150px;
+    padding: 0px 22.125vw 0px 22.125vw;
+    @include margin(150px , none , none , none);
 }
 
 .product4_col1 {
-    display: flex;
-    justify-content: center;
+    @include flex(center , none , none , none);
 }
 
 .product4_col2 {
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    flex-direction: row;
+    @include flex(start , center , row , none);
 
     p {
         padding-top: 30px;
         margin: 0;
         margin-left: 0px;
-        font-size: 20px;
-        font-weight: 300;
+        @include font(20px , 300);
         color: red;
     }
 }
 
 .product4_col3 {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    @include flex(space-between , none , column , none);
 
     img {
-        width: 50px;
+        @include width(50px);
         height: 45px;
     }
 
     p {
-        margin-top: 5px;
-        margin-bottom: 5px;
-        font-size: 18px;
-        font-weight: 900;
+        @include margin(5px , none , 5px , none);
+        @include font(18px , 900);
     }
 
     .grs4 {
-        display: flex;
-        justify-content: end;
+        @include flex(end , none , none , none);
 
         img {
-            margin: 2px;
+            @include margin(2px , 2px , 2px , 2px);
         }
     }
 }
 
 .product4_col4 {
-    margin-top: 19px;
+    @include margin(19px , none , none , none);
 
     p {
         color: #94979A;
-        font-size: 19px;
+        @include font(19px , none);
     }
 }
 
 
 .product5 {
-    margin-top: 150px;
+    padding: 0px 22.125vw 0px 22.125vw;
+    @include margin(150px , none , none , none);
 }
 
 .product5_col1 {
-    display: flex;
-    justify-content: center;
+    @include flex(center , none , none , none);
 }
 
 .product5_col2 {
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    flex-direction: row;
+    @include flex(start , center , row , none);
 
     p {
         padding-top: 30px;
         margin: 0;
         margin-left: 0px;
-        font-size: 20px;
-        font-weight: 300;
+        @include font(20px , 300);
         color: red;
     }
 }
 
 .product5_col3 {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    @include flex(space-between , none , column , none);
 
     img {
-        width: 50px;
+        @include width(50px);
         height: 45px;
     }
 
     p {
-        margin-top: 5px;
-        margin-bottom: 5px;
-        font-size: 18px;
-        font-weight: 900;
+        @include margin(5px , none , 5px , none);
+        @include font(18px , 900);
     }
 
     .grs5 {
-        display: flex;
-        justify-content: end;
+        @include flex(end , none , none , none);
 
         img {
-            margin: 2px;
+            @include margin(2px , 2px , 2px , 2px);
         }
     }
 }
 
 .product5_col4 {
-    margin-top: 19px;
+    @include margin(19px , none , none , none);
 
     p {
         color: #94979A;
-        font-size: 19px;
+        @include font(19px , none);
     }
 }
 
 .golestan_footer_row2 {
-    background-image: url(../images/header-back-1.png);
-    background-repeat: repeat;
+    @include backgroundImg;
 }
 
 
 @media all and (min-width:768px) {
     .what_about_golestan_row1 {
-        display: flex;
-        justify-content: center;
+        @include flex(center , none , none , none);
     }
-
-    .golestan_tea_container_col1{
-        display: flex;
-        justify-content: start;
+    .golestan_tea_container2_col1 {
+        @include flex(start , none , none , none);
     }
-    .golestan_tea_container_col2{
-        display: flex;
-        align-items: end;
+    .golestan_tea_container2_col2 {
+        @include flex(none , end , none , none);
     }
-
     .product1_row1 {
         margin: 0;
     }
-
     .product1_row2 {
-        display: flex;
-        justify-content: end;
+        @include flex(end , none , none , none);
         margin: 0;
     }
-
     .product1 {
-        display: flex;
-        justify-content: center;
+        @include flex(center , none , none , none);
     }
-
     .product1_col3 {
-        display: flex;
-        flex-direction: row;
-
+        @include flex(none , none , row , none);
         p {
-            width: 50%;
+            @include width(50%);
         }
-
         .grs1 {
-            width: 50%;
+            @include width(50%);
         }
     }
-
     .line_8 {
         margin: 0;
     }
-
     .product2_row1 {
         margin: 0;
     }
-
     .product2_row2 {
         margin: 0;
     }
-
     .product2 {
-        display: flex;
-        justify-content: center;
+        @include flex(center , none , none , none);
     }
-
     .product2_col3 {
-        display: flex;
-        flex-direction: row;
-
+        @include flex(none , none , row , none);
         p {
-            width: 50%;
+            @include width(50%);
         }
-
         .grs2 {
-            width: 50%;
+            @include width(50%);
         }
     }
-
     .product3_row1 {
         margin: 0;
     }
-
     .product3_row2 {
         margin: 0;
     }
-
     .product3 {
-        display: flex;
-        justify-content: center;
+        @include flex(center , none , none , none);
     }
-
     .product3_col3 {
-        display: flex;
-        flex-direction: row;
-
+        @include flex(none , none , row , none);
         p {
-            width: 50%;
+            @include width(50%);
         }
-
         .grs3 {
-            width: 50%;
+            @include width(50%);
         }
     }
-
     .product4_row1 {
         margin: 0;
     }
-
     .product4_row2 {
         margin: 0;
     }
-
     .product4 {
-        display: flex;
-        justify-content: center;
+        @include flex(center , none , none , none);
     }
-
     .product4_col3 {
-        display: flex;
-        flex-direction: row;
-
+        @include flex(none , none , row , none);
         p {
-            width: 50%;
+            @include width(50%);
         }
-
         .grs4 {
-            width: 50%;
+            @include width(50%);
         }
     }
-
     .product5_row1 {
         margin: 0;
     }
-
     .product5_row2 {
         margin: 0;
     }
-
     .product5 {
-        display: flex;
-        justify-content: center;
+        @include flex(center , none , none , none);
     }
-
     .product5_col3 {
-        display: flex;
-        flex-direction: row;
+        @include flex(none , none , row , none);
 
         p {
-            width: 50%;
+            @include width(50%);
         }
-
         .grs5 {
-            width: 50%;
+            @include width(50%);
         }
     }
-
     .golestan_footer_col3 {
         p {
-            width: 90%;
+            @include width(90%);
             text-align: start;
         }
     }
-
     .golestan_footer_col4 {
         p {
-            width: 90%;
+            @include width(90%);
             text-align: start;
         }
     }
-
     .golestan_footer_col5 {
         p {
-            width: 90%;
+            @include width(90%);
             text-align: start;
         }
     }
-
     .golestan_footer_col6 {
         p {
-            width: 90%;
+            @include width(90%);
             text-align: start;
         }
     }
-
     .golestan_footer_row2 {
-        background-image: url(../images/header-back-1.png);
-        background-repeat: repeat;
-        padding-right: 65px;
-        padding-left: 65px;
+        @include backgroundImg;
+        @include paddinglr(65px , 65px);
         justify-content: center;
     }
 }

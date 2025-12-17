@@ -1,2 +1,36 @@
 $bacground_image: url("../images/header-back-1.png");
 $bacground_repeat: repeat;
+
+@mixin width($x){
+    width: $x;
+}
+
+@mixin paddinglr($x , $y){
+    padding-left: $x;
+    padding-right: $y;
+}
+
+@mixin margin($x , $y , $a , $b){
+    margin-top: $x;
+    margin-right: $y;
+    margin-bottom: $a;
+    margin-left: $b;
+}
+
+@mixin flex($x , $y , $z , $a){
+    display: flex;
+    justify-content: $x;
+    align-items: $y;
+    flex-direction: $z;
+    flex-wrap: $a;
+}
+
+@mixin font($x , $y){
+    font-size: $x;
+    font-weight: $y;
+}
+
+@mixin backgroundImg {
+    background-image: url(../images/header-back-1.png);
+    background-repeat: repeat;
+}
